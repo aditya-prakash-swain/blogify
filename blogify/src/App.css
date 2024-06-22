@@ -6,3 +6,32 @@
 .active{
     @apply text-orange-400 underline underline-offset-4
 }
+
+.pagination{
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pagination li{
+    margin: 0 5px;
+}
+
+.pagination a{
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #000;
+}
+.pagination a:hover{
+    background: #eee;
+}
+.pagination li.activePagination{
+ background: rgb(230, 84, 31);
+ border-radius: 4px;
+ color: white;
+}
