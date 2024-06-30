@@ -9,10 +9,7 @@ function About() {
           About Us
         </h1>
       </div>
-      {/* all blogs container */}
-      <div className="max-w-7xl mx-auto">
-        <BlogPage/>
-      </div>
+     
     </div>
   );
 }

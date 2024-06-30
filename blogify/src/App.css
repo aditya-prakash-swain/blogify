@@ -31,7 +31,11 @@
     background: #eee;
 }
 .pagination li.activePagination{
- background: rgb(230, 84, 31);
+ background: rgb(221, 102, 17);
  border-radius: 4px;
  color: white;
+}
+
+.active-button{
+    color: rgb(221, 102, 17);
 }
