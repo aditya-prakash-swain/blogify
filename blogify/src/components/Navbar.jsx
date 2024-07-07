@@ -3,16 +3,18 @@ import { NavLink } from "react-router-dom";
 import { FaBars, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import Modal from "./Modal";
+import SignUp from "./SignUp";
 
 function Navbar() {
   const [isMenuOpen, SetIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
   const toggleMenu = () => {
     SetIsMenuOpen(!isMenuOpen);
   };
 
-  //nav items
+  // nav items
   const navItems = [
     { path: "/", link: "Home" },
     { path: "/about", link: "About" },
@@ -21,12 +23,29 @@ function Navbar() {
     { path: "/blog", link: "Blog" },
   ];
 
-  //Modal details
+  // Modal details
   const openModal = () => {
+    SetIsMenuOpen(false);
     setIsModalOpen(true);
   };
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  // SignUp details
+  const openSignUp = () => {
+    SetIsMenuOpen(false);
+    setIsSignUpOpen(true);
+  };
+  const closeSignUp = () => {
+    setIsSignUpOpen(false);
+  };
+
+  // Navigate from SignUp to Modal
+  const navigateToLogin = () => {
+    SetIsMenuOpen(false);
+    setIsSignUpOpen(!isSignUpOpen);
+    setIsModalOpen(!isModalOpen);
   };
 
   return (
@@ -51,8 +70,8 @@ function Navbar() {
             </li>
           ))}
         </ul>
-        
-        {/* social icons and login button */}
+
+        {/* social icons and login/sign-up buttons */}
         <div className="flex gap-5 items-center">
           <a href="/" className="hover:text-orange-400 hidden lg:block">
             <FaFacebook />
@@ -65,14 +84,29 @@ function Navbar() {
           </a>
           <button
             onClick={openModal}
-            className="bg-orange-400 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-400 transition-all duration-200 ease-in"
+            className="bg-orange-400 px-6 py-2 lg:px-6 lg:py-2 font-medium rounded hover:bg-white hover:text-orange-400 transition-all duration-200 ease-in md:p-2"
           >
             Log In
           </button>
+          <button
+            onClick={openSignUp}
+            className="bg-orange-400 px-6 py-2 lg:px-6 lg:py-2 font-medium rounded hover:bg-white hover:text-orange-400 transition-all duration-200 ease-in md:p-2"
+          >
+            Sign Up
+          </button>
         </div>
 
-        {/* modal component */}
-        <Modal isOpen={isModalOpen} onClose={closeModal} />
+        {/* modal components */}
+        <Modal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          onNavigateToLogin={navigateToLogin}
+        />
+        <SignUp
+          isOpen={isSignUpOpen}
+          onClose={closeSignUp}
+          onNavigateToLogin={navigateToLogin}
+        />
 
         {/* mobile menu btn, mobile view */}
         <div className="md:hidden">
@@ -85,7 +119,7 @@ function Navbar() {
           </button>
         </div>
       </nav>
-      
+
       {/* menu item for mobile */}
       <div>
         <ul
