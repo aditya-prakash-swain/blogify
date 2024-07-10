@@ -49,10 +49,10 @@ function Navbar() {
   };
 
   return (
-    <header className="bg-black text-white fixed top-0 left-0 right-0">
+    <header className="bg-black text-white fixed top-0 left-0 right-0 z-50">
       <nav className="px-4 py-4 max-w-7xl mx-auto flex justify-between items-center">
         <a href="/" className="text-xl font-bold text-white">
-          Design<span className="text-orange-400">Nav</span>
+          Blogi<span className="text-orange-400">fy</span>
         </a>
 
         {/* nav items for large devices */}

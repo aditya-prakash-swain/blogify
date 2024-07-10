@@ -36,7 +36,7 @@ function Describe() {
   };
 
   return (
-    <div className="flex flex-3 gap-4 mx-auto my-4 p-5">
+    <div className="flex flex-3 gap-4 mx-auto my-4 p-5 z-10">
       <div
         className="relative flex-1 w-48 h-100 p-2 bg-gray-900 font-semibold rounded-lg overflow-hidden"
         onMouseOver={handleMouseOver1}

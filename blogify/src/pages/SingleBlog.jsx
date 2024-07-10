@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 // import {} from "react-icons/fa";
 import { FaClock, FaUser } from "react-icons/fa6";
 import SideBar from "../components/SideBar";
+import { FaCalendar } from "react-icons/fa";
 
 
 function SingleBlog() {
@@ -32,8 +33,8 @@ function SingleBlog() {
             <img src={image} alt="" className="w-full mx-auto rounded"/>
           </div>
           <h2 className="text-3xl font-bold mb-4 mt-8 text-blue-500 cursor-pointer">{title}</h2>
-          <p className="mb-2 text-gray-500"><FaUser className="inline-flex items-center mr-2"/>{author} | <FaClock className="inline-flex items-center mr-2"/>{published_date}</p>
-          <p className="mb-2 text-gray-500"><FaClock className="inline-flex items-center mr-2"/>{reading_time}</p>
+          <p className="mb-2 text-gray-500"><FaUser className="inline-flex items-center mr-2"/>{author} | <FaCalendar className="inline-flex items-center mx-2"/>{published_date} | <FaClock className="inline-flex items-center mx-2"/>{reading_time}</p>
+          {/* <p className="mb-2 text-gray-500"></p> */}
           <p className="text-base text-gray-500 mb-6">{content}</p>
           <div className="text-base text-gray-500 mb-6">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A totam id nihil illum autem, perferendis aliquid quod quidem culpa, quos cum. Consequuntur tenetur fugiat non illum at voluptatibus repellat facilis!</p><br/>
