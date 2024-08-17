@@ -2,8 +2,13 @@ import { Outlet } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import axios from "axios"
 
 function App() {
+
+  axios.defaults.withCredentials= true;
+  axios.post('').catch(err => console.log(err))
+
   return (
     <>
       <Navbar />
