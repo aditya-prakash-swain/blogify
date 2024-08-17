@@ -7,7 +7,7 @@ import axios from "axios"
 function App() {
 
   axios.defaults.withCredentials= true;
-  axios.post('').catch(err => console.log(err))
+  axios.post('https://blogify-mu-livid.vercel.app/').catch(err => console.log(err))
 
   return (
     <>
